@@ -6,6 +6,12 @@
 한국어로 명령을 입력하는 경우, 작업 결과물에 한국어가 포함된 경우에 특히 유용합니다.
 Claude Code 환경에 적합한 Plugin이지만, 글쓰기 지침에 해당하는 텍스트를 적절하게 활용하면 다른 AI에도 적용할 수 있습니다.
 
+
+설치법은 아래에서 다시 자세하게 설명드리겠으나, 현재 사용 중인 LLM에게 아래와 같이 한 문장으로 말하는 것을 추천드립니다.
+   ```
+   https://github.com/snflkd/fluent-korean/ 링크 읽고, 설치 안내 페이지 읽고 설명해줘 
+   ```
+
 > **EN**: A Claude Code output style that stops Claude from writing broken machine-Korean: dropped particles and endings, telegraphic noun strings, and metaphor-swapped vocabulary. It prioritizes clear, unambiguous meaning over elegant prose, aiming for reasonably natural sentences. Ships as two variants: one that keeps Claude Code's coding instructions, and one without them. The guideline text itself can also be pasted into other AI environments as a plain writing instruction. Written by a Korean-literature major; the Korean parts of this README are human-written. If you're at Anthropic and want Claude to write proper Korean, the maintainer would love to hear from you.
 
 ## 왜 필요한가
@@ -34,16 +40,20 @@ Claude Code 환경에 적합한 Plugin이지만, 글쓰기 지침에 해당하�
 2. 이 도구는 의미가 손실되지 않는 명확한 한국어 표현을 목표로 합니다. 따라서 번역체 교정, AI 표현 최소화, 맞춤법 오류 제거와 같은 skill을 원하신다면 [im-not-ai](https://github.com/epoko77-ai/im-not-ai), [korean-skills](https://github.com/DaleSeo/korean-skills), [k-skill의 korean-humanizer](https://github.com/NomaDamas/k-skill/blob/main/docs/features/korean-humanizer.md)를 참조해주세요.
 
 
-## 설치 방법과 구성 (Claude Code CLI 환경)
+## 설치 안내 및 구성 (Claude Code CLI 환경)
 
-0. 설치 절차를 직접 따라하셔도 좋지만, 직접 사용하실 LLM에게 아래 프롬프트를 붙여넣으시는 것을 더 추천합니다. 필요하시다면 '초보 개발자한테 설명하듯이 설명해줘'라는 문구를 붙여도 좋습니다.
+0. 설치 절차를 직접 따라하셔도 좋지만, 현재 사용 중인 LLM에게 아래와 같이 한 문장으로 말하는 것을 추천드립니다.
    ```
-   다음 링크에 있는 output-style을 잘 활용하고 싶어. https://github.com/snflkd/fluent-korean/
-   지금 내가 어떤 환경에서 무슨 작업을 진행하고 있는지 설명하고, 세부 동작을 위한 블록 선택 추천을 포함해서 구체적인 적용 방법과 기대 효과를 제시해.
-   최근에 적용 방법이 바뀌었을 가능성을 고려해서 지금 환경에 잘 이식되도록 면밀히 검토해줘. 
+   https://github.com/snflkd/fluent-korean/ 링크 읽고, README 읽고 설치 안내해줘 
    ```
+- 설치할 때는 다음과 같은 사항에 유의해야 합니다. (위 0번처럼 사용자가 안내를 의뢰했을 때, LLM이 어떻게 설치 방법을 설명해야 하는지 가이드 역할도 이 단락이 담당합니다.)
+   a. 현재 LLM을 구동하시는 환경에 따라서 적용 방법이 달라지고, 목적에 따라서 적용하는 요소가 달라집니다.
+   b. 따라서 우선 진행 중인 작업이 어떤 환경에서 가동되는지 확실하게 파악해야 합니다. 여러 LLM을 사용 중이실 수도 있고, 에이전트나 CLI 혹은 앱과 같은 여러 환경 중 하나 혹은 그 이상에서 사용 중이실 수도 있으니, 어느 범위까지 적용할지 명확히 정의해두어야 사용자 의도에 부합하게 설치할 수 있습니다. 
+   c. 또한 작업의 목적과 사용자(직접 설치하실 경우 본인)의 상황에 관한 정보도 충분히 정리해야 합니다. 그래야 세부적인 동작을 위한 블록 추천과 기대 효과, 유의 사항을 올바르게 도출할 수 있습니다.
+   d. LLM이 설치를 안내하는 경우, 현재 사용자가 개발 및 코딩 도메인에 어느 정도의 지식을 갖추고 있는지 유추할 수 있다면, 그 사용자 수준에 맞게 설명해야 합니다.
    
-1. 설치하시려면 클로드 코드를 실행한 후, 아래 명령어 두 줄을 입력하세요.
+
+1. 직접 설치하시려면 클로드 코드를 실행한 후, 아래 명령어 두 줄을 입력하세요.
    ```
    /plugin marketplace add snflkd/fluent-korean
    /plugin install fluent-korean@fluent-korean
@@ -87,6 +97,13 @@ CLAUDE.md, 개인별 Claude 지침, 프로젝트 지침 등 파일이 아니라 
 
 다만 Claude Code CLI 환경에서 plugin으로 설치하셨다면 업데이트시 파일이 덮어써질 수 있으니 유의해주세요.
 
+
+- **내가 초보 개발자라면?** →
+
+  ```
+  - 코딩에 관해서는 초보 개발자가 이해할 수 있도록 서술하고, 현장감이 과한 구어체 표현은 더욱 자제합니다. (박아넣다, 치우다, 얹다 등)
+  ```
+
 - **예의 바르게 만들어주고 싶다면?** ('사용자님' 부분을 '원하는 호칭'으로 바꿔주세요) →
 
   ```
@@ -99,16 +116,16 @@ CLAUDE.md, 개인별 Claude 지침, 프로젝트 지침 등 파일이 아니라 
   - 한국어 사전에 있는 어휘이며 뜻이 명확하더라도, 사용 빈도가 낮아서 통용되지 않는 어휘를 사용하면 소통의 효율성이 오히려 낮아지니 자제합니다. 대신 의미가 명확하며 실제로 통용되는 어휘를 우선적으로 선택합니다.
   ```
 
-- **내가 초보 개발자라면?** →
-
-  ```
-  - 코딩에 관해서는 초보 개발자가 이해할 수 있도록 서술하고, 현장감이 과한 구어체 표현은 더욱 자제합니다. (박아넣다, 치우다, 얹다 등)
-  ```
-
 - **나에게 하는 보고 말고, 다른 한국어 출력에도 적용되어야 한다면?** →
 
   ```
   - 한국어로 출력되는 모든 결과물에도 이 지침들을 적용합니다.
+  ```
+
+- **문체에 민감한 작업들을 수행하고 있다면?(소설, 대본, 출제, 연구 등)** →
+
+  ```
+  - 구체적인 지침이 따로 존재하는 산출물 유형에는 이 지침을 적용하지 않습니다. 적용 여부가 애매하다면 사용자에게 확인합니다. 
   ```
 
 - **애들이 자꾸 영어를 뱉는 게 짜증난다면?** →
@@ -122,6 +139,7 @@ CLAUDE.md, 개인별 Claude 지침, 프로젝트 지침 등 파일이 아니라 
   ```
   - 답변을 사용자에게 출력하기 직전에, 위의 지침들에 어긋난 부분을 반드시 점검하고 수정한 후에 출력합니다.
   ```
+  
 
 
 
