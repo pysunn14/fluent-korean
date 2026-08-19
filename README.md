@@ -19,11 +19,9 @@ Claude Code 환경에 적합한 Plugin이지만, 글쓰기 지침에 해당하�
 최근 AI 모델은 한국어를 능숙하게 쓰지 못하는데, 토큰 사용량을 낮추고 컨텍스트 제한에 대응하기 위해 말을 간결하게 하도록 설정된 코딩 에이전트들은 더 그렇습니다.
 이런 현상을 최대한 개선하는 도구가 바로 fluent-korean입니다.
 
-| 상황 | 기본 스타일 (Before) | `fluent-korean` (After) |
-| --- | --- | --- |
-| 코딩 작업 후 보고 | <img width="900" height="790" alt="image" src="https://github.com/user-attachments/assets/893eab79-70bf-44f1-987d-cdfdc9c3017c" /> | <img width="900" height="900" alt="image" src="https://github.com/user-attachments/assets/c421af21-8bf4-42dd-9fdd-fa82f4bc5bb9" /> |
-| 전월세 차이 설명 산출물 (일부) | <img width="900" height="550" alt="image" src="https://github.com/user-attachments/assets/a67a7ae2-8c12-44ef-829c-3f3d779dfcae" /> | <img width="900" height="730" alt="image" src="https://github.com/user-attachments/assets/bf7e9c86-3c64-4e4c-a7a0-1ad28f9ebf6a" /> |
-
+![기본 스타일과 fluent-korean 적용 결과 비교](https://github.com/user-attachments/assets/82559d0d-b6b3-4906-b118-dccbc7d2914d)
+동일한 모델에게 동일한 프롬프트를 주어 작업을 수행하게 한 결과입니다.
+(컨텍스트 압박이 없으면서 깨끗한 맥락에서 실행했으므로, 실제로는 이보다 Before 퀄리티가 더 낮습니다.)
 
 
 기본 스타일의 문제점 :
